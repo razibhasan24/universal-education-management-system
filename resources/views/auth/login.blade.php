@@ -1,0 +1,47 @@
+<x-guest-layout>
+    <div class="d-flex align-items-center justify-content-center mb-4">
+        <i class="bi bi-mortarboard-fill text-primary" style="font-size: 2.5rem;"></i>
+        <span class="fw-bold fs-4 ms-2">{{ config('app.name', 'Laravel') }}</span>
+    </div>
+
+    <h2 class="text-center fw-semibold mb-4">{{ __('Log in') }}</h2>
+
+    <form method="POST" action="{{ route('login') }}">
+        @csrf
+
+        <!-- Email Address -->
+        <div class="mb-3">
+            <x-input-label for="email" :value="__('Email')" />
+            <x-text-input id="email" class="form-control mt-1" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+            <x-input-label for="password" :value="__('Password')" />
+            <x-text-input id="password" class="form-control mt-1"
+                            type="password"
+                            name="password"
+                            required autocomplete="current-password" />
+            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        </div>
+
+        <!-- Remember Me -->
+        <div class="form-check mb-3">
+            <input id="remember_me" type="checkbox" class="form-check-input" name="remember">
+            <label for="remember_me" class="form-check-label">{{ __('Remember me') }}</label>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-between mt-4">
+            @if (Route::has('password.request'))
+                <a class="text-decoration-none small" href="{{ route('password.request') }}">
+                    {{ __('Forgot your password?') }}
+                </a>
+            @endif
+
+            <x-primary-button class="px-4 py-2">
+                {{ __('Log in') }}
+            </x-primary-button>
+        </div>
+    </form>
+</x-guest-layout>
