@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->unique(['institution_id', 'academic_session_id', 'code'], 'class_code_unique');
-            $table->index(['institution_id', 'academic_session_id', 'numeric_order']);
+            $table->index(['institution_id', 'academic_session_id', 'numeric_order'], 'class_order_idx');
         });
     }
 

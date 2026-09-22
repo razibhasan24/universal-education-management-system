@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('subjects', function (Blueprint $table) {
             $table->id();
             $table->foreignId('institution_id')->constrained()->onDelete('cascade');
-            $table->foreignId('class_id')->constrained()->onDelete('cascade');
+            $table->foreignId('class_id')->constrained('school_classes')->onDelete('cascade');
             $table->string('name');
             $table->string('code', 50)->nullable();
             $table->unsignedSmallInteger('full_marks')->default(100);
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->unique(['class_id', 'code'], 'subject_code_unique');
-            $table->index(['institution_id', 'class_id', 'subject_type']);
+            $table->index(['institution_id', 'class_id', 'subject_type'], 'subject_type_idx');
         });
     }
 

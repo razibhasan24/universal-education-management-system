@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -20,13 +19,6 @@ return new class extends Migration
 
             $table->index(['institution_id', 'status']);
         });
-
-        // Ensure only one active session per institution
-        DB::statement("
-            CREATE UNIQUE INDEX active_session_per_institution
-            ON academic_sessions (institution_id, status)
-            WHERE status = 'active'
-        ");
     }
 
     public function down(): void

@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('sections', function (Blueprint $table) {
             $table->id();
             $table->foreignId('institution_id')->constrained()->onDelete('cascade');
-            $table->foreignId('class_id')->constrained()->onDelete('cascade');
+            $table->foreignId('class_id')->constrained('school_classes')->onDelete('cascade');
             $table->string('name');
             $table->unsignedSmallInteger('capacity')->default(0);
             $table->string('status', 20)->default('active');
