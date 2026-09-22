@@ -3,6 +3,9 @@
 use App\Http\Controllers\Admin\AcademicSessionController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\InstitutionController;
+use App\Http\Controllers\Admin\SectionController;
+use App\Http\Controllers\Admin\SchoolClassController;
+use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +24,12 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     Route::resource('academic-sessions', AcademicSessionController::class);
     Route::post('academic-sessions/{academicSession}/set-active', [AcademicSessionController::class, 'setActive'])->name('academic-sessions.set-active');
+
+    Route::resource('school-classes', SchoolClassController::class);
+
+    Route::resource('sections', SectionController::class);
+
+    Route::resource('subjects', SubjectController::class);
 });
 
 Route::middleware('auth')->group(function () {
