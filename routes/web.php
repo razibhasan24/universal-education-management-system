@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AcademicSessionController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\InstitutionController;
 use App\Http\Controllers\ProfileController;
@@ -17,6 +18,9 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('institutions', InstitutionController::class);
+
+    Route::resource('academic-sessions', AcademicSessionController::class);
+    Route::post('academic-sessions/{academicSession}/set-active', [AcademicSessionController::class, 'setActive'])->name('academic-sessions.set-active');
 });
 
 Route::middleware('auth')->group(function () {
