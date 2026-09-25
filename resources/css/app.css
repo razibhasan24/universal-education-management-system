@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -194,4 +195,18 @@ body {
 }
 .breadcrumb .sep {
     @apply text-gray-300 dark:text-gray-600;
+=======
+@import url('../../node_modules/bootstrap-icons/font/bootstrap-icons.css');
+@import url('../../node_modules/bootstrap/dist/css/bootstrap.css');
+
+/* Custom foundation styles */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-brand i {
+    font-size: 1.4rem;
+>>>>>>> fdf64b54617ff63720d6ee480331d892c4043616
 }

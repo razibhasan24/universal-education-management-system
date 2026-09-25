@@ -8,4 +8,12 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+<<<<<<< HEAD
+=======
+    server: {
+        watch: {
+            ignored: ['**/storage/framework/views/**'],
+        },
+    },
+>>>>>>> fdf64b54617ff63720d6ee480331d892c4043616
 });

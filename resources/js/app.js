@@ -1,4 +1,5 @@
 import './bootstrap';
+<<<<<<< HEAD
 import Alpine from 'alpinejs';
 import collapse from '@alpinejs/collapse';
 import focus from '@alpinejs/focus';
@@ -34,3 +35,7 @@ if (localStorage.getItem('darkMode') === 'true' ||
     (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark');
 }
+=======
+import * as bootstrap from 'bootstrap';
+window.bootstrap = bootstrap;
+>>>>>>> fdf64b54617ff63720d6ee480331d892c4043616

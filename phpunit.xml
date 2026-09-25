@@ -19,6 +19,11 @@
     </source>
     <php>
         <env name="APP_ENV" value="testing"/>
+<<<<<<< HEAD
+=======
+        <env name="APP_URL" value="http://localhost"/>
+        <env name="ASSET_URL" value="http://localhost"/>
+>>>>>>> fdf64b54617ff63720d6ee480331d892c4043616
         <env name="APP_MAINTENANCE_DRIVER" value="file"/>
         <env name="BCRYPT_ROUNDS" value="4"/>
         <env name="BROADCAST_CONNECTION" value="null"/>

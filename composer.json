@@ -7,6 +7,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+<<<<<<< HEAD
         "barryvdh/laravel-dompdf": "^3.1",
         "cviebrock/eloquent-sluggable": "^12.0",
         "intervention/image": "^3.11",
@@ -19,6 +20,12 @@
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^4.4",
+=======
+        "laravel/framework": "^12.0",
+        "laravel/tinker": "^2.10.1"
+    },
+    "require-dev": {
+>>>>>>> fdf64b54617ff63720d6ee480331d892c4043616
         "fakerphp/faker": "^1.23",
         "laravel/breeze": "^2.4",
         "laravel/pail": "^1.2.2",
@@ -33,11 +40,15 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
+<<<<<<< HEAD
         },
         "files": [
             "app/Helpers/Helper.php",
             "app/Helpers/functions.php"
         ]
+=======
+        }
+>>>>>>> fdf64b54617ff63720d6ee480331d892c4043616
     },
     "autoload-dev": {
         "psr-4": {

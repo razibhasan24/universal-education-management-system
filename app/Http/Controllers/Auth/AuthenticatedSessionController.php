@@ -25,6 +25,7 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
+<<<<<<< HEAD
         $request->session()->regenerate();
 
         // Last login update
@@ -33,6 +34,10 @@ class AuthenticatedSessionController extends Controller
             'last_login_at' => now(),
             'last_login_ip' => $request->ip(),
         ]);
+=======
+
+        $request->session()->regenerate();
+>>>>>>> fdf64b54617ff63720d6ee480331d892c4043616
 
         return redirect()->intended(route('dashboard', absolute: false));
     }
@@ -50,4 +55,8 @@ class AuthenticatedSessionController extends Controller
 
         return redirect('/');
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> fdf64b54617ff63720d6ee480331d892c4043616

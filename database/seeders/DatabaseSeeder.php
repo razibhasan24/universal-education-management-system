@@ -2,10 +2,16 @@
 
 namespace Database\Seeders;
 
+<<<<<<< HEAD
+=======
+use App\Models\User;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+>>>>>>> fdf64b54617ff63720d6ee480331d892c4043616
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
+<<<<<<< HEAD
     public function run(): void
     {
         $this->call([
@@ -21,3 +27,23 @@ class DatabaseSeeder extends Seeder
         ]);
     }
 }
+=======
+    use WithoutModelEvents;
+
+    /**
+     * Seed the application's database.
+     */
+    public function run(): void
+    {
+        $this->call([
+            RoleSeeder::class,
+            PermissionSeeder::class,
+        ]);
+
+        User::firstOrCreate(
+            ['email' => 'test@example.com'],
+            ['name' => 'Test User', 'password' => 'password']
+        );
+    }
+}
+>>>>>>> fdf64b54617ff63720d6ee480331d892c4043616
